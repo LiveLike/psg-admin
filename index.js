@@ -13,6 +13,11 @@ const createEnvironmentAsync = async ({ programTitle, leaderboardName, rewardTab
     console.log(linkRewardTableWithProgramResponse);
     const startProgramResponse = await startProgramAsync({ programId: program.id });
     console.log(startProgramResponse);
+
+    return {
+        programId: program.id,
+        leaderboardId: leaderboard.id
+    };
 };
 
 const handleCreateEnvironmentButtonAsync = async (e) => {
@@ -20,7 +25,10 @@ const handleCreateEnvironmentButtonAsync = async (e) => {
     e.stopPropagation();
     const programTitle = document.querySelector("#program-title-input").value;
     const leaderboardName = document.querySelector("#leaderboard-name-input").value;
-    await createEnvironmentAsync({ programTitle, leaderboardName, rewardTableId });
+    const environment = await createEnvironmentAsync({ programTitle, leaderboardName, rewardTableId });
+    const resultLinkElement = document.querySelector("#result-link");
+    resultLinkElement.setAttribute("href", `https://livelike.github.io/psg-demo?program_id=${environment.programId}`);
+    resultLinkElement.innerHTML = "Result Link";
 };
 
 const runAsync = async () => {
