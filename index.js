@@ -28,9 +28,10 @@ const handleCreateEnvironmentButtonAsync = async (e) => {
     const environment = await createEnvironmentAsync({ programTitle, leaderboardName, rewardTableId });
     const experienceLinkElement = document.querySelector("#experience-link");
     experienceLinkElement.setAttribute("href", `https://livelike.github.io/psg-experience?program_id=${environment.programId}`);
+    experienceLinkElement.innerHTML = "Experience Link";
     const cmsLinkElement = document.querySelector("#cms-link");
     cmsLinkElement.setAttribute("href", `https://cf-blast.livelikecdn.com/producer/applications/${clientId}/programs/${environment.programId}`);
-    cmsLinkElement.innerHTML = "Result Link";
+    cmsLinkElement.innerHTML = "CMS Link";
 };
 
 const runAsync = async () => {
