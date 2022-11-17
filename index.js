@@ -27,7 +27,7 @@ const handleCreateEnvironmentButtonAsync = async (e) => {
     const leaderboardName = document.querySelector("#leaderboard-name-input").value;
     const environment = await createEnvironmentAsync({ programTitle, leaderboardName, rewardTableId });
     const resultLinkElement = document.querySelector("#result-link");
-    resultLinkElement.setAttribute("href", `https://livelike.github.io/psg-demo?program_id=${environment.programId}`);
+    resultLinkElement.setAttribute("href", `https://livelike.github.io/psg-experience?program_id=${environment.programId}`);
     resultLinkElement.innerHTML = "Result Link";
 };
 
