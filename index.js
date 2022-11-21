@@ -23,12 +23,17 @@ const createEnvironmentAsync = async ({ programTitle, leaderboardName, rewardTab
 const handleCreateEnvironmentButtonAsync = async (e) => {
     e.preventDefault();
     e.stopPropagation();
-    const programTitle = document.querySelector("#program-title-input").value;
-    const leaderboardName = document.querySelector("#leaderboard-name-input").value;
-    const environment = await createEnvironmentAsync({ programTitle, leaderboardName, rewardTableId });
+
+    const profileType = document.querySelector("#profile-type-select").value;
+    const experienceName = `${document.querySelector("#experience-name-input").value} (${guid()})`;
+
+    const environment = await createEnvironmentAsync({ programTitle: experienceName, leaderboardName: experienceName, rewardTableId });
+
     const experienceLinkElement = document.querySelector("#experience-link");
-    experienceLinkElement.setAttribute("href", `https://livelike.github.io/psg-experience?program_id=${environment.programId}`);
+    const experienceLink = `https://livelike.github.io/psg${profileType == "email-and-nickname" ? "" : "-2"}-experience?program_id=${environment.programId}`;
+    experienceLinkElement.setAttribute("href", experienceLink);
     experienceLinkElement.innerHTML = "Experience Link";
+
     const cmsLinkElement = document.querySelector("#cms-link");
     cmsLinkElement.setAttribute("href", `https://cf-blast.livelikecdn.com/producer/applications/${clientId}/programs/${environment.programId}`);
     cmsLinkElement.innerHTML = "CMS Link";
