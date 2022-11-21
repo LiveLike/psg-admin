@@ -87,3 +87,30 @@ const guid = () => {
         (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
     );
 }
+
+const generateQrCode = ({ link }) => {
+    const qrCode = new QRCode(document.getElementById("qrcode"), {
+        width: 300,
+        height: 300
+    });
+
+    qrCode.makeCode(link);
+    document.querySelector("#download-qr-code-button").disabled = false;
+};
+
+const downloadURI = (uri, name) => {
+    var link = document.createElement("a");
+    link.download = name;
+    link.href = uri;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    delete link;
+}
+
+const handleDownloadQrCode = () => {
+    const uri = document.querySelector("#qrcode>img").src;
+    const name = guid();
+    downloadURI(uri, name);
+};
+

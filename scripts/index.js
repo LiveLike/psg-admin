@@ -37,6 +37,8 @@ const handleCreateEnvironmentButtonAsync = async (e) => {
     const cmsLinkElement = document.querySelector("#cms-link");
     cmsLinkElement.setAttribute("href", `https://cf-blast.livelikecdn.com/producer/applications/${clientId}/programs/${environment.programId}`);
     cmsLinkElement.innerHTML = "CMS Link";
+
+    generateQrCode({ link: experienceLink });
 };
 
 const runAsync = async () => {
