@@ -95,7 +95,7 @@ const generateQrCode = ({ link }) => {
     });
 
     qrCode.makeCode(link);
-    document.querySelector("#download-qr-code-button").disabled = false;
+    //document.querySelector("#download-qr-code-button").disabled = false;
 };
 
 const downloadURI = (uri, name) => {
@@ -108,9 +108,9 @@ const downloadURI = (uri, name) => {
     delete link;
 }
 
-const handleDownloadQrCode = () => {
-    const uri = document.querySelector("#qrcode>img").src;
-    const name = guid();
-    downloadURI(uri, name);
-};
+// const handleDownloadQrCode = () => {
+//     const uri = document.querySelector("#qrcode>img").src;
+//     const name = guid();
+//     downloadURI(uri, name);
+// };
 
