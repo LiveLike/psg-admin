@@ -1,8 +1,8 @@
 const baseUrl = "https://cf-blast.livelikecdn.com/api/v1";
-const producerToken = "TESitiE_U0FmcP-6nNPLV2z_NMAdqXoaWTo3BYPHfra0TWyo3udnTg";
-const clientId = "QcGUcxr97Bf05j6Dz1v8anj7FPWZ58GWlIatzJkz";
-const rewardTableId = "931ae648-64f8-498d-9f5e-07ff37464d15";
-const rewardItemId = "569a1c65-8dc6-4e2d-aa76-06ca7f23a818";
+const producerToken = "su57GN8DOCxq-N394-21PVEju47a35PpOj0RJnydtRUXeT9WZFeBhg";
+const clientId = "dpB3eOXAccJnJuFErwp6BX1WbV0u5DSY1DbfNHhS";
+const rewardTableId = "5d8fbb6a-14e8-41e0-980f-2d2f93f153f8";
+const rewardItemId = "a4fff073-52b8-4429-8850-2ff98f901cea";
 
 const createEnvironmentAsync = async ({ programTitle, leaderboardName, rewardTableId }) => {
     const program = await createProgramAsync(programTitle);
