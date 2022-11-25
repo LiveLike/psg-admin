@@ -1,5 +1,5 @@
-const baseUrl = "https://cf-blast.livelikecdn.com/api/v1";
-const producerToken = "VCP0raEPdYnDczwEfx90zOHTFNy8kAFAx0KIuZgCJe3mU2pkdqANOQ";
+const baseUrl = "https://livelike-psg-admin-proxy.herokuapp.com/api/v1";
+const producerToken = "ignored";
 const clientId = "dpB3eOXAccJnJuFErwp6BX1WbV0u5DSY1DbfNHhS";
 const rewardTableId = "5d8fbb6a-14e8-41e0-980f-2d2f93f153f8";
 const rewardItemId = "a4fff073-52b8-4429-8850-2ff98f901cea";
