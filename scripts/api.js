@@ -44,7 +44,8 @@ const linkLeaderboardWithProgramAsync = async ({ programId, leaderboardId }) => 
     headers.append("Authorization", `Bearer ${producerToken}`);
     const response = await fetch(`${baseUrl}/programs/${programId}/leaderboards/${leaderboardId}/`, {
         method: "PUT",
-        headers: headers
+        headers: headers,
+        body: JSON.stringify({})
     });
     if (response.ok) {
         return response;
@@ -58,7 +59,8 @@ const linkRewardTableWithProgramAsync = async ({ programId, rewardTableId }) => 
     headers.append("Authorization", `Bearer ${producerToken}`);
     const response = await fetch(`${baseUrl}/programs/${programId}/reward-tables/${rewardTableId}/`, {
         method: "PUT",
-        headers: headers
+        headers: headers,
+        body: JSON.stringify({})
     });
 
     if (response.ok) {
@@ -73,7 +75,8 @@ const startProgramAsync = async ({ programId }) => {
     headers.append("Authorization", `Bearer ${producerToken}`);
     const response = await fetch(`${baseUrl}/programs/${programId}/start/`, {
         method: "POST",
-        headers: headers
+        headers: headers,
+        body: JSON.stringify({})
     });
 
     if (response.ok) {
